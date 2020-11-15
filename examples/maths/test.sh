@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# Example of Running: 
+#    ./test.sh ../../src/func_wrapping/libpreload.so ./func/bin/
+
+
 if [ $# != 2 ]
 then
 echo "usage: $0 <shared_library.so> <func_bin>"
 exit 1
 fi
 
-#../ld_preloadf/libpreload.so #/tmp/openlibm/libopenlibm.so
 shared_lib=$1
 func_bins=$2
 
