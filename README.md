@@ -1,5 +1,5 @@
 
-# Fuzzy libmath
+# libmath Monte-Carlo Arithmetic model
 Evaluating the pipeline stability by applying noise to mathematical functions 
 using the library call interposition technique.
 
@@ -10,7 +10,7 @@ using the library call interposition technique.
 
 2) Download the shared math library that includes the instrumented math functions from `./src/func_wrapping/libpreload.so`
 
-3) Export Linux 'LD_PRELOAD' environment variable by running:
+3) Export Linux `LD_PRELOAD` environment variable by running:
 ```
 export LD_PRELOAD=libpreload.so
 ```
@@ -44,3 +44,13 @@ ltrace -c -L -x '@libm.so.*' <PIPELINE COMMAND>
 verificarlo -fPIC -shared  -o libpreload.so wrapping_script.c -ldl
 ```
 
+## How to Contribute
+
+1. Clone repo and create a new branch: `$ git checkout https://github.com/ali4006/MCA-libmath -b name_for_new_branch`.
+2. Make changes and test
+3. Submit Pull Request with comprehensive description of changes
+
+
+## License
+
+[MIT](LICENSE) © /bin Lab
