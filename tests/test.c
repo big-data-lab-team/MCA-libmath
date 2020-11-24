@@ -5,14 +5,13 @@
 int main(int argc, char* argv[]) {
 
   if (argc != 2) {
-    fprintf(stderr, "usage: ./atanf <x>\n");
+    fprintf(stderr, "usage: ./sin <x>\n");
     exit(1);
   }
   
-  float x = atof(argv[1]);
-  float res = atanf(x);
+  double x = atof(argv[1]);
+  double res = sin(x);
   printf("%.13a\n", res);
   
   return 0;
 }
-
