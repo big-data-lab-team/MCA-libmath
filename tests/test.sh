@@ -3,6 +3,7 @@
 export VFC_BACKENDS="libinterflop_mca.so"
 
 # Compile program normally with gcc
+ln -s /usr/bin/gcc-4.7 /usr/bin/gcc
 gcc test.c -o test -lm
 
 # Get several samples of the function
