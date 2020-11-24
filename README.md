@@ -5,25 +5,39 @@ using the library call interposition technique. This project aims to study wheth
 the MCA method is truly a good perturbation model for evaluating pipeline stability 
 across the operating systems.
 
-
 ## Usage example
 
 1) Install the last version of [Verificarlo](https://github.com/verificarlo/verificarlo)
 
-2) Download the shared math library that includes the instrumented math functions from `./src/func_wrapping/libpreload.so`
+2) Create instrumented shared math library:
+```
+git clone https://github.com/ali4006/MCA-libmath.git /tmp/mca-libmath/
+cd /tmp/mca-libmath/src/
+make
+```
 
 3) Export Linux `LD_PRELOAD` environment variable by running:
 ```
-export LD_PRELOAD=libpreload.so
+export LD_PRELOAD=/tmp/mca-libmath/src/libpreload.so
 ```
 
 4) Set the virtual precision and instrumentation mode of Verificarlo by running:
 ```
-export VFC_BACKENDS="libinterflop_mca.so --precision-binary64 <p> --mode <m>"
+export VFC_BACKENDS="libinterflop_mca.so --precision-binary32 <p1> --precision-binary64 <p2> --mode <m>"
 ```
 
 5) Run your pipeline
 
+## Usage example through the Docker image
+
+We created a docker base image, including the steps (1-4) mentioned above. It is available at https://hub.docker.com/r/salari/fuzzy/ubuntu-libmath-base.
+
+Running a simple test script in which calculates the standard deviation of several mca samples of sin() function:
+
+```
+docker pull salari/fuzzy:ubuntu-libmath-base
+docker run -w /tmp/mca-libmath/tests/  ubuntu-libmath-base /bin/bash test.sh
+```
 
 ## How to Contribute
 
