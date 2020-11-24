@@ -11,7 +11,7 @@ across the operating systems.
 
 2) Create instrumented shared math library:
 ```
-git clone https://github.com/ali4006/MCA-libmath.git /tmp/mca-libmath/
+git clone https://github.com/big-data-lab-team/MCA-libmath.git /tmp/mca-libmath/
 cd /tmp/mca-libmath/src/
 make
 ```
@@ -41,7 +41,7 @@ docker run -w /tmp/mca-libmath/tests/  ubuntu-libmath-base /bin/bash test.sh
 
 ## How to Contribute
 
-1. Clone repo and create a new branch: `$ git checkout https://github.com/ali4006/MCA-libmath -b name_for_new_branch`.
+1. Clone repo and create a new branch: `$ git checkout https://github.com/big-data-lab-team/MCA-libmath -b name_for_new_branch`.
 2. Make changes and test
 3. Submit Pull Request with comprehensive description of changes
 
