@@ -1,6 +1,6 @@
 # Makefile for the instrumented shared library
 
-CC = verificarlo-c
+CC = verificarlo-c --save-temps --verbose
 TRACER_FLAGS = --tracer --tracer-debug-mode --tracer-level=temporary
 CFLAGS = -fPIC --verbose  # C flags
 LDFLAGS = -shared   # linking flags
