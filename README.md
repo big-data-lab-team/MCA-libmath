@@ -14,11 +14,12 @@ across the operating systems.
 git clone https://github.com/big-data-lab-team/MCA-libmath.git /tmp/mca-libmath/
 cd /tmp/mca-libmath/src/
 make
+make test
 ```
 
 3) Export Linux `LD_PRELOAD` environment variable by running:
 ```
-export LD_PRELOAD=/tmp/mca-libmath/src/libpreload.so
+export LD_PRELOAD=/tmp/mca-libmath/src/libmath.so
 ```
 
 4) Set the virtual precision and instrumentation mode of Verificarlo by running:

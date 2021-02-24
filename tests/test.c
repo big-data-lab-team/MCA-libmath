@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,7 +26,8 @@ void eval(char *argv[]) {
     printf(FMT(x), res);
   }
 }
-#elif BIVAR
+#endif
+#ifdef BIVAR
 void eval(char *argv[]) {
   REAL x = atof(argv[1]);
   REAL y = atof(argv[2]);
@@ -34,7 +36,8 @@ void eval(char *argv[]) {
     printf(FMT(x), res);
   }
 }
-#elif LGAMMA_R
+#endif
+#ifdef LGAMMA_R
 void eval(char *argv[]) {
   REAL x = atof(argv[1]);
   int *sign;
@@ -43,17 +46,16 @@ void eval(char *argv[]) {
     printf(FMT(x), res);
   }
 }
-#elif SINCOS
+#endif
+#ifdef SINCOS
 void eval(char *argv[]) {
   REAL x = atof(argv[1]);
-  REAL *cos, *sin;
+  REAL cosx, sinx;
   for (int i = 0; i < N; i++) {
-    FUNCTION(x, cos, sin);
-    printf(FMT2(x), *cos, *sin);
+    FUNCTION(x, &cosx, &sinx);
+    printf(FMT2(x), cosx, sinx);
   }
 }
-#else
-#error "No signature provided"
 #endif
 
 int main(int argc, char *argv[]) {
