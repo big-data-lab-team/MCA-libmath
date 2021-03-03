@@ -75,7 +75,7 @@ static float (*real_erfcf)(float dbl);
 static double (*real_lgamma)(double dbl);
 static float (*real_lgammaf)(float dbl);
 static double (*real_tgamma)(double dbl);
-static double (*real_tgammaf)(float dbl);
+static float (*real_tgammaf)(float dbl);
 
 static double (*real_lgamma_r)(double dbl, int *signgamp);
 static float (*real_lgammaf_r)(float dbl, int *signgamp);

@@ -5,7 +5,7 @@ import sys
 
 
 def load_value(filename):
-    value = np.loadtxt(filename)
+    value = np.loadtxt(filename, dtype=np.float64)
     return value
 
 

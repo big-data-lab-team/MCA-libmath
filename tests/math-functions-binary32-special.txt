@@ -1,2 +1,0 @@
-lgammaf_r
-sincosf
