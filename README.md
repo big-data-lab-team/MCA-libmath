@@ -11,15 +11,16 @@ across the operating systems.
 
 2) Create instrumented shared math library:
 ```
-git clone https://github.com/big-data-lab-team/MCA-libmath.git /tmp/mca-libmath/
-cd /tmp/mca-libmath/src/
+mkdir /opt/
+git clone https://github.com/big-data-lab-team/MCA-libmath.git /opt/mca-libmath/
+cd /opt/mca-libmath/
 make
 make test
 ```
 
 3) Export Linux `LD_PRELOAD` environment variable by running:
 ```
-export LD_PRELOAD=/tmp/mca-libmath/src/libmath.so
+export LD_PRELOAD=/opt/mca-libmath/src/libmath.so
 ```
 
 4) Set the virtual precision and instrumentation mode of Verificarlo by running:
@@ -37,7 +38,7 @@ Running a simple test script in which calculates the standard deviation of sever
 
 ```
 docker pull salari/fuzzy:ubuntu-libmath-base
-docker run -w /tmp/mca-libmath/tests/  ubuntu-libmath-base /bin/bash test.sh
+docker run -w /opt/mca-libmath/tests/  ubuntu-libmath-base /bin/bash test.sh
 ```
 
 ## How to Contribute
